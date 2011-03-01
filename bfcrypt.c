@@ -17,6 +17,7 @@
 #include "md5.h"
 #include "sha256.h"
 #include "crc32.h"
+#include "des.h"
 
 static void print_usage(const char *name)
 {
@@ -60,6 +61,7 @@ int main(int argc, char **argv)
 		find_md5(start, offset);
 		find_sha256(start, offset);
 		find_crc32(start, offset);
+		find_des(start, offset);
 	}
 
 	free(start);
