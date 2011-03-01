@@ -9,7 +9,7 @@
 #ifndef _BLOWFISH_H_
 #define _BLOWFISH_H_
 
-int find_blowfish(char *p);
+int find_blowfish(char *base, size_t offset);
 int find_blowfish_parray(char *p);
 int find_blowfish_sbox(char *p, int n);
 

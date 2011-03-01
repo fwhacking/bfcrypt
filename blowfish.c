@@ -15,20 +15,20 @@
 #include "bfcrypt.h"
 #include "blowfish.h"
 
-int find_blowfish(char *p)
+int find_blowfish(char *base, size_t offset)
 {
 	unsigned int i;
 	
-	if (find_blowfish_parray(p) == 0)
+	if (find_blowfish_parray(base + offset) == 0)
 	{
-		printf("Blowfish P-array  (0x%08x) found at 0x%08lx\n", BLOWFISH_PARRAY[0], (unsigned long) p);
+		printf("Blowfish P-array  (0x%08x) found at 0x%08lx\n", BLOWFISH_PARRAY[0], (unsigned long) offset);
 	}
 
 	for (i = 0; i < 4; i++)
 	{
-		if (find_blowfish_sbox(p, i) == 0)
+		if (find_blowfish_sbox(base + offset, i) == 0)
 		{
-			printf("Blowfish S-box[%d] (0x%08x) found at 0x%08lx\n", i, BLOWFISH_SBOX[i][0], (unsigned long) p);
+			printf("Blowfish S-box[%d] (0x%08x) found at 0x%08lx\n", i, BLOWFISH_SBOX[i][0], (unsigned long) offset);
 		}
 	}
 	

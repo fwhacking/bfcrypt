@@ -14,6 +14,7 @@
 
 #include "bfcrypt.h"
 #include "blowfish.h"
+#include "md5.h"
 
 static void print_usage(const char *name)
 {
@@ -53,7 +54,8 @@ int main(int argc, char **argv)
 
 	for (offset = 0; offset < size; offset++)
 	{
-		find_blowfish(start + offset);
+		find_blowfish(start, offset);
+		find_md5(start, offset);
 	}
 
 	free(start);
