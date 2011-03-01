@@ -1,5 +1,5 @@
 TGT    = bfcrypt
-SRC    = $(addsuffix .c, $(TGT) blowfish md5)
+SRC    = $(addsuffix .c, $(TGT) blowfish md5 sha256)
 OBJ    = $(addsuffix .o, $(TGT))
 INC    = -I.
 CFLAGS = -W -Wall -O2
